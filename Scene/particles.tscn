@@ -1,0 +1,70 @@
+[gd_scene load_steps=8 format=3 uid="uid://b03nl65etc1x6"]
+
+[ext_resource type="Script" path="res://Scene/particles.gd" id="1_uyr3c"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_fehi0"]
+
+[sub_resource type="Curve" id="Curve_65dvn"]
+min_value = -200.0
+max_value = 400.0
+_data = [Vector2(0, -36.3636), 0.0, 5707.97, 0, 0, Vector2(0.217877, -85.4546), -949.975, -949.975, 0, 0, Vector2(1, -150.909), 0.0, 0.0, 0, 0]
+
+[sub_resource type="Curve" id="Curve_ubwjy"]
+max_value = 2.77
+_data = [Vector2(0, 2.5), 0.0, 0.0, 0, 0, Vector2(1, 0.181818), 0.0, 0.0, 0, 0]
+
+[sub_resource type="Gradient" id="Gradient_8c4oq"]
+offsets = PackedFloat32Array(0, 0.155224, 0.325373, 0.534328, 0.650746, 0.99403)
+colors = PackedColorArray(0.96528, 1, 0.685068, 1, 0.964612, 0.998295, 0.468123, 1, 0.971461, 0.435108, 0.0613174, 1, 0.976245, 0.60728, 0.273202, 1, 0.980381, 0, 0.0336213, 1, 1, 0, 0.033144, 1)
+
+[sub_resource type="Curve" id="Curve_mm75o"]
+max_value = 300.0
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.00904977, 158.182), 0.0, 0.0, 0, 0, Vector2(0.140272, 27.2727), -126.378, -126.378, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+
+[sub_resource type="Curve" id="Curve_p3smx"]
+max_value = 1.57
+_data = [Vector2(0, 2.5), 0.0, 0.0, 0, 0, Vector2(1, 0.318182), 0.0, 0.0, 0, 0]
+
+[node name="Particles" type="Node2D"]
+script = ExtResource( "1_uyr3c" )
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+material = SubResource( "CanvasItemMaterial_fehi0" )
+emitting = false
+amount = 200
+lifetime = 0.5
+one_shot = true
+explosiveness = 0.65
+emission_shape = 1
+emission_sphere_radius = 2.0
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 0.5
+initial_velocity_max = 300.0
+linear_accel_min = 0.2
+linear_accel_max = 100.0
+linear_accel_curve = SubResource( "Curve_65dvn" )
+scale_amount_max = 5.68
+scale_amount_curve = SubResource( "Curve_ubwjy" )
+color_ramp = SubResource( "Gradient_8c4oq" )
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="CPUParticles2D"]
+emitting = false
+lifetime = 1.08
+one_shot = true
+speed_scale = 1.36
+explosiveness = 0.67
+randomness = 0.36
+emission_shape = 1
+emission_sphere_radius = 2.0
+spread = 180.0
+gravity = Vector2(0, 140)
+initial_velocity_min = 3.03
+initial_velocity_max = 35.79
+linear_accel_min = -2.16
+linear_accel_max = 8.18
+linear_accel_curve = SubResource( "Curve_mm75o" )
+scale_amount_min = 2.5
+scale_amount_max = 4.52
+scale_amount_curve = SubResource( "Curve_p3smx" )
+color_ramp = SubResource( "Gradient_8c4oq" )
