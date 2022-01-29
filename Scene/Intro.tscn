@@ -1,0 +1,21 @@
+[gd_scene load_steps=2 format=3 uid="uid://g55ciji321y2"]
+
+[ext_resource type="Script" path="res://Scene/DirtyMetro.gd" id="1_liaj1"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="ClickHandler" type="Polygon2D" parent="."]
+position = Vector2(-0.00247971, 0)
+scale = Vector2(1.00619, 0.711012)
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(0, 0, 477.049, 0, 477.049, 720.1, -1, 722)
+
+[node name="Timer" type="Timer" parent="."]
+editor_description = "Tick for AudioStreamer"
+wait_time = 0.1
+autostart = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+script = ExtResource( "1_liaj1" )
+
+[connection signal="timeout" from="Timer" to="AudioStreamPlayer" method="ding"]
