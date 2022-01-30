@@ -10,8 +10,8 @@ config_version=5
 
 [application]
 
-config/name="Clicker"
-run/main_scene="res://Scene/main.tscn"
+config/name="GGJSapporo2022_KeepYourBeats"
+run/main_scene="res://Scene/Intro.tscn"
 config/icon="res://icon.png"
 config/features=PackedStringArray("4.0", "Vulkan Mobile")
 
@@ -19,6 +19,7 @@ config/features=PackedStringArray("4.0", "Vulkan Mobile")
 
 window/size/viewport_width=480
 window/size/viewport_height=720
+window/stretch/mode="canvas_items"
 
 [rendering]
 
