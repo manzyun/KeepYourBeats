@@ -1,0 +1,42 @@
+[gd_scene load_steps=6 format=3 uid="uid://bo0vr6tjjxelv"]
+
+[ext_resource type="Script" path="res://Scripts/Main.gd" id="1_iuawr"]
+[ext_resource type="PackedScene" uid="uid://b3y0rkxu54bxf" path="res://Scene/Note.tscn" id="2_ou38k"]
+[ext_resource type="PackedScene" uid="uid://bk564qdu4pye8" path="res://Scene/Particles.tscn" id="3_iqj4o"]
+[ext_resource type="PackedScene" uid="uid://glieupp38csx" path="res://Scene/Hud.tscn" id="4_crjpw"]
+
+[sub_resource type="Curve2D" id="Curve2D_w700k"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 480, 0, 0, 0, 0, 0, 485, 723, 0, 0, 0, 0, 2, 720, 0, 0, 0, 0, 1, 1)
+}
+
+[node name="Main" type="Node2D"]
+script = ExtResource( "1_iuawr" )
+note_scene = ExtResource( "2_ou38k" )
+particles_scene = ExtResource( "3_iqj4o" )
+
+[node name="NoteTimer" type="Timer" parent="."]
+wait_time = 0.5
+
+[node name="ScoreTimer" type="Timer" parent="."]
+
+[node name="StartTimer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[node name="StartPosition" type="Position2D" parent="."]
+position = Vector2(240, 450)
+
+[node name="NotePath" type="Path2D" parent="."]
+curve = SubResource( "Curve2D_w700k" )
+
+[node name="NoteSpawnLocation" type="PathFollow2D" parent="NotePath"]
+position = Vector2(1, 1)
+rotation = -0.00208769
+
+[node name="HUD" parent="." instance=ExtResource( "4_crjpw" )]
+
+[connection signal="timeout" from="NoteTimer" to="." method="_on_note_timer_timeout"]
+[connection signal="timeout" from="ScoreTimer" to="." method="_on_ScoreTimer_timeout"]
+[connection signal="timeout" from="StartTimer" to="." method="_on_StartTimer_timeout"]
+[connection signal="start_game" from="HUD" to="." method="new_game"]
