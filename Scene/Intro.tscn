@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://ck0fs2ythgr1t"]
+
+[ext_resource type="AudioStream" uid="uid://wrqushkhl5l8" path="res://Sounds/se1.wav" id="1_gmjrj"]
+[ext_resource type="Script" path="res://Scripts/DirtyMetro.gd" id="1_liaj1"]
+[ext_resource type="PackedScene" uid="uid://cew7rqk3rkefo" path="res://Scene/Intro_circle.tscn" id="2_emy8n"]
+
+[node name="Intro" type="Node2D"]
+
+[node name="ClickHandler" type="Polygon2D" parent="."]
+position = Vector2(-0.00247971, 0)
+scale = Vector2(1.00619, 0.711012)
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(0, 0, 477.049, 0, 477.05, 1012.64, 0.00246445, 1012.64)
+
+[node name="Timer" type="Timer" parent="."]
+editor_description = "Tick for AudioStreamer"
+wait_time = 0.1
+autostart = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( "1_gmjrj" )
+volume_db = 0.05
+script = ExtResource( "1_liaj1" )
+
+[node name="IntroCircle" parent="." instance=ExtResource( "2_emy8n" )]
+
+[connection signal="timeout" from="Timer" to="AudioStreamPlayer" method="ding"]

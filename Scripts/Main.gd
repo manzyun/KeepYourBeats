@@ -4,7 +4,7 @@ extends Node
 @export var particles_scene: PackedScene
 var score
 var attend_score
-var clear_score = 22
+var clear_score = 2022
 
 func _ready():
 	randomize()
@@ -41,7 +41,7 @@ func _on_StartTimer_timeout():
 	$ScoreTimer.start()
 
 func _on_note_timer_timeout():
-	var note_spawn_location=get_node("NotePath/NoteSpawnLocation");
+	var note_spawn_location = get_node("NotePath/NoteSpawnLocation");
 	note_spawn_location.offset = randi()
 	
 	var note = note_scene.instantiate()

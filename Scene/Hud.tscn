@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://glieupp38csx"]
 
-[ext_resource type="FontData" uid="uid://b3wf5mqnwr6o1" path="res://dodge_assets/fonts/Xolonium-Regular.ttf" id="1_7qj5u"]
+[ext_resource type="FontData" uid="uid://b3wf5mqnwr6o1" path="res://Dodge_assets/fonts/Xolonium-Regular.ttf" id="1_7qj5u"]
 [ext_resource type="Script" path="res://Scripts/Hud.gd" id="1_w7nnf"]
 
 [sub_resource type="Font" id="Font_jgpb5"]

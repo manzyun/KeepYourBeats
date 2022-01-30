@@ -18,7 +18,7 @@ func _process(delta):
 		x * -1
 
 func _draw():
-	var center = Vector2(200, 200)
+	var center = Vector2(240, 270)
 	draw_circle(center, sin_radius, Color.FOREST_GREEN)
 	draw_circle(center, cos_radius, Color.CHARTREUSE)
-
+	

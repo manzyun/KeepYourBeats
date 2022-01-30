@@ -36,6 +36,10 @@ rotation = -0.00208769
 
 [node name="HUD" parent="." instance=ExtResource( "4_crjpw" )]
 
+[node name="Polygon2D" type="Polygon2D" parent="."]
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(0, 0, 480, 0, 480, 720, 0, 720)
+
 [connection signal="timeout" from="NoteTimer" to="." method="_on_note_timer_timeout"]
 [connection signal="timeout" from="ScoreTimer" to="." method="_on_ScoreTimer_timeout"]
 [connection signal="timeout" from="StartTimer" to="." method="_on_StartTimer_timeout"]
