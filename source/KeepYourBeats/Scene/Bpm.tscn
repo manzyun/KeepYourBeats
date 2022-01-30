@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://dngh8r6nd5h02"]
+
+[ext_resource type="Script" path="res://Scripts/Bpm.gd" id="1_4edt6"]
+[ext_resource type="AudioStream" uid="uid://wrqushkhl5l8" path="res://Sounds/se1.wav" id="2_iyiut"]
+
+[node name="Bpm" type="Node"]
+script = ExtResource( "1_4edt6" )
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( "2_iyiut" )

@@ -1,0 +1,20 @@
+#+TITLE: READ ME
+
+This document about "Keep Your Beats" for developers.
+
+* File Structure
+
+- Scene ::  Game scenes on display. Example;
+  =*.tscn=, =*.gd=
+  - Children :: Child scenes is here.
+    - If you want look like for _Scene_ then;
+    - Shall you make Directories
+      - and files.
+- Assets :: Sounds, graphics, any others. Example;
+  =*.ogg=, =*.png=
+  - If you want look like for _Scene_ then;
+  - Shall you make Directories
+    - and files.
+- Scripts :: *Static* methods (a.k.a *Modules*) script is here.
+- default_env.tres :: Please don't move and rename.
+- icon.png :: Please don't move and rename.

@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://ck0fs2ythgr1t"]
+
+[ext_resource type="AudioStream" uid="uid://wrqushkhl5l8" path="res://Sounds/se1.wav" id="1_gmjrj"]
+[ext_resource type="PackedScene" uid="uid://cew7rqk3rkefo" path="res://Scene/Intro_circle.tscn" id="2_emy8n"]
+[ext_resource type="Script" path="res://Scripts/Main.gd" id="2_sbnow"]
+[ext_resource type="PackedScene" uid="uid://dngh8r6nd5h02" path="res://Scene/Bpm.tscn" id="4_1gmyp"]
+
+[node name="Intro" type="Node2D"]
+
+[node name="ClickHandler" type="Polygon2D" parent="."]
+position = Vector2(-0.00247971, 0)
+scale = Vector2(1.00619, 0.711012)
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(0, 0, 477.049, 0, 477.05, 1012.64, 0.00246445, 1012.64)
+
+[node name="Timer" type="Timer" parent="."]
+editor_description = "Tick for AudioStreamer"
+wait_time = 0.1
+autostart = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( "1_gmjrj" )
+volume_db = 0.05
+script = ExtResource( "2_sbnow" )
+
+[node name="IntroCircle" parent="." instance=ExtResource( "2_emy8n" )]
+
+[node name="Bpm" parent="." instance=ExtResource( "4_1gmyp" )]
+
+[connection signal="set_bpm" from="Bpm" to="AudioStreamPlayer" method="_on_bpm_set_bpm"]
